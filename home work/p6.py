@@ -3,4 +3,4 @@ for i in range(9):
         print(" ",end=" ")
     for j in range(i,-1,-1):
         print(i+1,end=" ")
-    print("")
+    print()
