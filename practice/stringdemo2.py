@@ -1,4 +1,4 @@
-s=input("enter String = ")
+    s=input("enter String = ")
 
 upper=0
 lower=0
