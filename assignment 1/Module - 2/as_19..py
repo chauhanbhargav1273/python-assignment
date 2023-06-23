@@ -3,3 +3,5 @@
 #whole 'not'...'poor' substring with 'good'. Return the resulting string.
 
 
+
+a=input("enter value = ")

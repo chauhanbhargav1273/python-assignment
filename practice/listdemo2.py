@@ -1,4 +1,4 @@
-l=[1,2,3,1.1,22.2,"tops",True,10,20,"python",False,101,202,"java","automation"]
+l=[1,2,3,1.1,22.2,"tops",True,10,20,"python",Falsez","automation"]
 
 
 print(l[:2])
