@@ -6,3 +6,7 @@ Fruit Name : apple
 Quantity : 2
 Price : 4500
 
+Fruit Name : apple
+Quantity : 34
+Price : 5600
+

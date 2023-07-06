@@ -52,7 +52,6 @@ while True:
         print("1. Add Fruit Stock")
         print("2. View Fruit Stock")
         print("3. Update Fruit Stock")
-        print("4. Save All Data")
         print("*"*60)
         choice=int(input("Enter Your roles : "))
         print("*"*60)
@@ -79,11 +78,9 @@ while True:
             qty=int(input("enter fruit qulity : "))
             price=int(input("enter fruit price : "))
             update_fruit(fname,qty,price)
-        elif choice==4:
-            save_all_fruit(fname,qty,price)
-                
+         
     elif choice==2:
-        print("costomer")
+        save_all_fruit(fname,qty,price)
     
     else:
         print("Thank you")
