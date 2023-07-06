@@ -1,0 +1,3 @@
+Fruit Name : Apple
+Quantity : 5
+Price : 150
