@@ -1,3 +1,8 @@
-Fruit Name : Apple
-Quantity : 5
-Price : 150
+Fruit Name : banana
+Quantity : 23
+Price : 45000
+
+Fruit Name : apple
+Quantity : 2
+Price : 4500
+

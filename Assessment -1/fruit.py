@@ -24,9 +24,8 @@ def update_fruit(fname,qty,price):
         
 
 def save_all_fruit(fname,qty,price):
-    file=open("fruit.txt","w")
-    file.write("Fruit Name : "+fname+"\nQuantity : "+str(qty)+"\nPrice : "+str(price))
-    print(d)
+    file=open("fruit.txt","a")
+    file.write("Fruit Name : "+fname+"\nQuantity : "+str(qty)+"\nPrice : "+str(price)+"\n\n")
     file.close()
     file=open("fruit.txt","r")
     a=file.read()
@@ -53,6 +52,7 @@ while True:
         print("1. Add Fruit Stock")
         print("2. View Fruit Stock")
         print("3. Update Fruit Stock")
+        print("4. Save All Data")
         print("*"*60)
         choice=int(input("Enter Your roles : "))
         print("*"*60)
@@ -64,7 +64,7 @@ while True:
             qty=int(input("enter fruit qulity : "))
             price=int(input("enter fruit price : "))
             add_fruit(fname,qty,price)
-            save_all_fruit(fname,qty,price)
+           
             yn=input("Do You Wont To Perform More Opration (Y/N) : ")
             if yn=='y':
                 choice==1
@@ -79,6 +79,8 @@ while True:
             qty=int(input("enter fruit qulity : "))
             price=int(input("enter fruit price : "))
             update_fruit(fname,qty,price)
+        elif choice==4:
+            save_all_fruit(fname,qty,price)
                 
     elif choice==2:
         print("costomer")
