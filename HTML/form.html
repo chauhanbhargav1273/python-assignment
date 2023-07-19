@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="form.js">
+	</script>
+	<link rel="stylesheet" href="validetion/disign.css">
+</head>
+<body>
+<h1>student registation</h1>
+<p class="a1">enter your detail</p>
+<form method="post" name="frm">
+
+	<table>
+		<tr>
+			<td>first name</td>
+			<td><input type="text" name="fname" onblur="checkfname();"></td>
+			<td><span id="fname"></span></td>
+		</tr>
+		<tr>
+			<td>last name</td>
+			<td><input type="text" name="lname" onblur="checklname();"></td>
+			<td><span id="lname"></span></td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td><input type="email" name="email" onblur="checkemail();"></td>
+			<td><span id="email"></span></td>
+		</tr>
+		<tr>
+			<td>mobile</td>
+			<td><input type="text" name="mobile" onblur="checkmobile();" color="green" style="color: green;"></td>
+			<td><span id="mobile"></span></td>
+		</tr>
+		<tr>
+			<td>adderss</td>
+			<td><textarea rows="5" cols="15" name="adderss"></textarea></td>
+		</tr>
+		<tr>
+			<td>gender</td>
+			<td><input type="radio" name="gender" value="male">male
+			<input type="radio" name="gender" value="female">female</td>
+		</tr>
+		<tr>
+			<td>hobby</td>
+			<td>
+				<input type="checkbox" name="hobby" value="music">music<br>
+				<input type="checkbox" name="hobby" value="reading">reading<br>
+				<input type="checkbox" name="hobby" value="traveling">traveling<br>
+				<input type="checkbox" name="hobby" value="cricket">cricket
+
+			</td>
+		</tr>
+		<tr>
+			<td>Education</td>
+			<td>
+				<select name="education">
+					<option>--Select Education--</option>
+					<option value="10th">10th</option>
+					<option value="12th">12th</option>
+					<option value="bca">bca</option>
+					<option value="b.com">b.come</option>
+					<option value="mca">mca</option>
+					<option value="bac">bac</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+		<td>resume</td>
+		<td><input type="file" name="resume"></td>
+		</tr>
+		<tr>
+		<td>birth date</td>
+		<td><input type="date" name="bdate"></td>
+		</tr>
+		<tr>
+		<td>birth time</td>
+		<td><input type="time" name="btime"></td>
+		</tr>
+		<tr>
+		<td>expexced salary</td>
+		<td><input type="range" name="salary" min="10000" max="100000"></td>
+		</tr>
+		<tr>
+		<td>password</td>
+		<td><input type="password" name="password" onblur="checkPassword();"></td>
+		<td><span id="password"></span></td>
+		</tr>
+		<tr>
+		<td>confirm password</td>
+		<td><input type="password" name="cpassword" onblur="cPassword();"></td>
+		<td><span id="cpassword"></span></td>
+		</tr>
+		<tr>
+		<td colspan="2" align="center"><input type="submit" name="submit"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
