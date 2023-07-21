@@ -82,9 +82,34 @@ class bank:
       conn.commit()
       conn.close()
       print("Deleted successfully")
-class costmer:
-   def register():
+
+   def withdraw(self,ano):
+      self.ano=ano
+      
+      conn=create_conn()
+      cursor=conn.cursor()
+      cursor.execute(f"update costmer set balance='{self.balance}' where ano='{self.ano}';")
+      conn.commit()
+      conn.close()
+      print("withdraw sucessfully")
+
+
+   def deposit(self):
       print()
+
+   def view_balance(self,ano):
+      self.ano=ano
+      
+      conn=create_conn()
+      cursor=conn.cursor()
+      cursor.execute(f"select balance from costmer where ano='{self.ano}';")
+      rows=cursor.fetchall()
+      for i in rows:
+         count=0
+         print("***************Detail Of costmer""******************")
+         count+1
+         print("Balance : ",i[count])
+      conn.close()
       
 b1=bank()
    
@@ -139,7 +164,6 @@ while True:
         elif choice==4:
             print("View all Customers")
             print("*"*60)
-            #ano=int(input("enter account number : "))
             b1.view_all()
         elif choice==5:
             print("Delete all Customers")
@@ -161,12 +185,26 @@ while True:
         if choice==1:
             print("Register")
             print("*"*60)
+            ano=int(input("enter account number : "))
+            fname=input("enter first name : ")
+            lname=input("enter last name : ")
+            balance=int(input("enter check balance : "))
+            email=input("enter Email id : ")
+            password=input("enter password : ")
             b1.register(ano,fname,lname,balance,email,password)
         elif choice==2:
             print("Login")
+            email=input("Enter Email : ")
+            password=input("enter your password : ")
+            print("*"*60)
+            b1.login(email,password)
             print("*"*60)
         elif choice==3:
             print("Withdraw Amount")
+            ano=int(input("Enter Account Number : "))
+            amount=int(input("Enter Withdraw Ammount: "))
+            
+            b1.withdraw(amount,,ano,balance)
             print("*"*60)
         elif choice==4:
             print("Deposit Amount")
@@ -174,6 +212,8 @@ while True:
         elif choice==5:
             print("View Balance")
             print("*"*60)
+            ano=int(input("enter Account Number : "))
+            b1.view_balance(ano)
     else:
         print("Thank you")
         break
