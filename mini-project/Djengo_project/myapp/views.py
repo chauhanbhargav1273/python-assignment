@@ -41,12 +41,13 @@ def signup (request):
 					profile_pic=request.FILES['profile_pic'],
 				)
 				msg="user sign up sucessfully"
-				return render(request,'signup.html',{'msg':msg})
+				return render(request,'login.html',{'msg':msg})
 			else:
 				msg="password & confirm password does not match"
 				return render(request,'signup.html',{'msg':msg})
 	else:
 		return render(request,'signup.html')
+		
 def login (request):
 	if request.method=="POST":
 		try:
@@ -64,6 +65,7 @@ def login (request):
 			return render(request,'login.html',{'msg':msg})	
 	else:
 		return render(request,'login.html')
+
 def logout(request):
 	try:
 		del request.session['email']
