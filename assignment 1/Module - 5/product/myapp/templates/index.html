@@ -1,43 +1,11 @@
-
+{% extends 'header.html' %}
+{% block content %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>product</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<style type="text/css">
-	tr,td{
-		padding: 10px;
-	}
-</style>
-<center>
-<h1>welcome to my product page</h1>
-{% if msg %}
-	<b style="color:blue;">{{msg}}</b>
-{%  endif %}
-<form name="contect" method="post" action="{% url 'index' %}">
-	{% csrf_token %}
-	<table>
-		<tr>
-			<td>product id</td>
-			<td><input type="text" name="pid"></td>
-		</tr>
-		<tr>
-			<td>product name</td>
-			<td><input type="text" name="pname"></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-			<input type="submit"  value="submit" class="btn btn-primary">
-			</td>
-		</tr>
-	</table>
-</form>
-</center>
+<h1>welcome to you home page</h1>
 </body>
 </html>
+{% endblock %}
