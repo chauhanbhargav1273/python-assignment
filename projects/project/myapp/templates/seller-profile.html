@@ -1,0 +1,120 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+{%  block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+    </head>
+	<body>
+	
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">profile</h3>
+						<ul class="breadcrumb-tree">
+							<li><a href="#">Home</a></li>
+							<li class="active">profile</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-7">
+						<!-- Billing Details -->
+						<div class="billing-details">
+							{% if msg %}
+							<b style="color: blue;">{{msg}}</b>
+							{% endif %}
+							<div class="section-title">
+								<h3 class="title">Profile page</h3>
+							</div>
+							<form name="signup" method="post" action="{% url 'seller-profile' %}" align="center" enctype="multipart/form-data">
+								{% csrf_token %}
+							<div class="form-group" align="center">
+								<input class="input" type="text" name="fname" value="{{user.fname}}" placeholder="First Name">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="lname" value="{{user.lname}}" placeholder="Last Name">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="email" value="{{user.email}}" placeholder="Email" readonly>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="mobile" value="{{user.mobile}}" placeholder="Mobile">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="address" value="{{user.address}}" placeholder="Address">
+							</div>
+							<div class="form-group">
+								<img src="{{user.profile_pic.url}}" width="100px" height="100px">
+							</div>
+							<div class="form-group">
+								<input  type="file" name="profile_pic">
+							</div>
+							<div class="form-group">
+								<input class="primary-btn order-submit" type="submit"  name="submit" value="Update Profile">
+							</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		</form>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Enter Your Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+	</body>
+</html>
+{% endblock %}

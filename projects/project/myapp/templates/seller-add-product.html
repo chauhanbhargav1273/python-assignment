@@ -1,0 +1,142 @@
+{% extends 'seller-header.html' %}
+{% load static %}
+{%  block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+    </head>
+	<body>
+	
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">seller add product</h3>
+						<ul class="breadcrumb-tree">
+							<li><a href="#">Home</a></li>
+							<li class="active">seller add product</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-7">
+						<!-- Billing Details -->
+						{% if msg %}
+								<b style="color: blue;">{{msg}}</b>
+						{% endif %}
+						<div class="billing-details">
+							
+							<div class="section-title">
+								<h3 class="title">seller add product page</h3>
+							</div>
+							<form name="signup" method="post" action="{% url 'seller-add-product' %}" align="center" enctype="multipart/form-data">
+								{% csrf_token %}
+							<div class="form-group" align="center">
+								<select class="input"  name="product_category">
+									<option>----select product category----</option>
+									<option value="laptop">leptop</option>
+									<option value="Accessories">accessories</option>
+									<option value="Camara">camara</option>
+								</select>
+							</div>	
+							<div class="form-group" align="center">
+								<input class="input" type="text" name="product-name" placeholder="Product Name" id="addpro">
+								<span id="email_error"></span>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="product-price" placeholder="Product Price">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="product-desc" placeholder="Product Description">
+							</div>
+							
+							<div class="form-group">
+								<input type="file" name="product-image">
+							</div>
+							<div class="form-group">
+								<input class="primary-btn order-submit" type="submit"  name="submit" value="add product">
+							</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		</form>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Enter Your Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+<script>
+	$("#addpro").change(function(){
+		var addpro=$(this).val();
+		alert(addpro);
+		$.ajax({
+			url:'/ajax/validate_addpro/',
+			data:{
+				'addpro':addpro
+			},
+			datatype:'json',
+			success:function(data){
+				if(data.is_taken){
+					document.getElementById("email_error").innerHTML="this product name is exits"
+				}
+				else{
+					document.getElementById("email_error").innerHTML="";
+				}
+			}
+		});
+	});
+</script>
+	</body>
+</html>
+{% endblock %}
